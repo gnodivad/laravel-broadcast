@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use App\Events\TestEvent;
+
+Route::get('/fire', function () {
+    event(new TestEvent());
+    return 'ok';
 });
