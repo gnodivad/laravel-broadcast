@@ -13,6 +13,10 @@
 
 use App\Events\TestEvent;
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/fire', function () {
     event(new TestEvent());
     return 'ok';

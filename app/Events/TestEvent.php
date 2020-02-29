@@ -14,6 +14,8 @@ class TestEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $lol = 'haha';
+
     /**
      * Create a new event instance.
      *
@@ -31,6 +33,6 @@ class TestEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('test');
+        return new PrivateChannel('test');
     }
 }
